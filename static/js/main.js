@@ -4,13 +4,11 @@ function toggleMenu() {
         }
       
        document.addEventListener('DOMContentLoaded', function() {
-    // References to DOM elements
-    const sendButton = document.querySelector('.chat-send-btn');
-    const messageInput = document.querySelector('.chat-input');
-    const fileInput = document.querySelector('.chat-upload-btn');
-    const modelSelect = document.getElementById('modelSelect');
-    const botSelect = document.getElementById('botSelect');
-    const messageThread = document.querySelector('.message-thread');
+        const sendButton = document.querySelector('.chat-send-btn');
+        const messageInput = document.querySelector('.chat-input');
+        const fileInput = document.querySelector('.chat-upload-btn');
+        const modelSelect = document.getElementById('modelSelect');
+        const messageThread = document.querySelector('.message-thread');
 
     let currentCenterMessageElement = null;
 
@@ -44,7 +42,7 @@ function toggleMenu() {
         messageElement.style.cursor = 'pointer';
         messageElement.addEventListener('click', () => {
             // Highlight message
-            messageElement.style.backgroundColor = '#243B55'; // Highlight selected message
+        messageElement.style.backgroundColor = '#243B55'; // Highlight selected message
             messageElement.style.color = 'white';
           messageElement.style.padding = '10px'; // Add padding for better readability
     messageElement.style.margin = '5px 0'; // Add margin for spacing between messages
@@ -59,69 +57,59 @@ function toggleMenu() {
         // Display the new message in the center, replacing any existing centered message
         displayCenterMessage(content);
     }
+        // Function to handle sending messages
+        async function sendMessage() {
+            const message = messageInput.value.trim();
+            const model = modelSelect.value;
 
-    async function sendMessage() {
-        const formData = new FormData();
-        if (messageInput.value.trim()) {
-            formData.append('message', messageInput.value.trim());
-        }
-        if (fileInput.files.length > 0) {
-            formData.append('file', fileInput.files[0]);
-        }
-        formData.append('model', modelSelect.value);
-        formData.append('botType', botSelect.value);
+            if (!message) return; // Don't send empty messages
 
-        try {
-            const response = await fetch('/process_interaction', {
-                method: 'POST',
-                body: formData,
-            });
+            // Append the user's message to the chat
+            appendMessage('user', message);
 
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
+            // Assuming '/process_interaction' is your API endpoint for handling messages
+            const formData = new FormData();
+            formData.append('message', message);
+            formData.append('model', model);
+
+            // If there's a file selected, append it to the formData
+            if (fileInput.files.length > 0) {
+                formData.append('file', fileInput.files[0]);
             }
 
-            const data = await response.json();
-            appendMessage(`Bot: ${data.response}`);
+            // Send the message and model selection to your server
+            try {
+                const response = await fetch('/process_interaction', {
+                    method: 'POST',
+                    body: formData,
+                });
+                const data = await response.json();
+                
+                // Append the AI's response to the chat
+                appendMessage('bot', data.response);
+            } catch (error) {
+                console.error('Error sending message:', error);
+                appendMessage('bot', 'Error: Could not send message.');
+            }
 
-            // Clear the inputs after sending
+            // Reset input fields after sending
             messageInput.value = '';
-            fileInput.value = '';
-        } catch (error) {
-            console.error('Error sending message:', error);
-            appendMessage('Error: Could not send message.');
+            fileInput.value = null;
         }
-    }
 
-    // Event listener for the send button
-    sendButton.addEventListener('click', function(event) {
-        event.preventDefault(); // Prevent default form submission behavior
-        sendMessage();
+        // Event listener for the send button
+        sendButton.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent form submission
+            sendMessage();
+        });
+
+        // Optionally, handle Enter key to send message
+        messageInput.addEventListener('keypress', (event) => {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                sendMessage();
+            }
+        });
     });
 
-    async function sendToOpenAI(prompt) {
-        const data = { prompt: prompt, bot_type: botSelect.value };
 
-        try {
-            const response = await fetch('/openai', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            });
-
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-
-            const result = await response.json();
-            appendMessage(`OpenAI: ${result.response}`);
-        } catch (error) {
-            console.error('Error querying OpenAI:', error);
-            appendMessage('Error: Could not get response from OpenAI.');
-        }
-    }
-
-    // Optionally, you can add a listener for the messageInput or fileInput to trigger OpenAI requests directly
-});
