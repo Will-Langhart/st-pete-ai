@@ -232,41 +232,16 @@ body {
   
   <!-- AI Model Selection Button -->     
     <title></title>
-        <div class="selection-area">
-        <div class="model-select">
-            <label for="modelSelect"></label>
-            <select id="modelSelect" name="model">
-            <option value="gpt-4">GPT-4</option>
-            <option value="gpt-3.5-turbo">GPT-3.5 Turbo</option>
-            <option value="dalle">DALL·E</option>
-            <option value="code-davinci-002">Code Analysis</option> 
-            <option value="text-davinci-003">Text Davinci</option>
-            <option value="davinci-codex">Davinci Codex</option>
-            <option value="davinci-instruct-beta">Davinci Instruct Beta</option>
-            <option value="vertex-ai">Gemini</option>
-            <option value="midjourney">Midjourney</option>
-            <option value="curie">Curie</option>
-            <option value="babbage">Babbage</option>
-            <option value="ada">Ada</option>
-            <option value="whisper">Whisper</option>
-            <option value="none">N/A</option>
-                <!-- Add more model options as needed -->
+         <div class="selection-area">
+         <div class="model-select">
+            <label for="modelSelect">Choose a model:</label>
+            <select id="modelSelect">
+                <option value="gpt-neo-2.7b">GPT-Neo 2.7B (Hugging Face)</option>
+                <option value="distilgpt2">DistilGPT2 (Hugging Face)</option>
+                <option value="lc-gpt-j-6B">GPT-J-6B (LangChain)</option>
+                <option value="lc-blenderbot-3B">BlenderBot 3B (LangChain)</option>
             </select>
         </div>
-       
-        <div class="bot-select">
-            <label for="botSelect"></label>
-            <select id="botSelect" name="bot">
-            <option value="image-bot">Image Bot</option>
-            <option value="code-bot">Code Bot</option>
-            <option value="command-code-bot">Command Code Bot</option>
-            <option value="compiler-code-bot">Compiler Code Bot</option>
-            <option value="video-bot">Video Bot</option>
-              <option value="none">N/A</option>
-          
-            <!-- Add more options as needed -->
-        </select>
-      </div>
     </div>  
     
     <script>
