@@ -1,0 +1,194 @@
+/* This will remove the scrollbar for the entire webpage */
+html {
+    overflow: hidden; /* Hide scrollbars */
+}
+
+body {
+    overflow: hidden; /* Hide scrollbars */
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #243B55;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+   
+
+
+
+        header {
+            width: 100%;
+            background:  
+            padding: 18px 0;
+            position: fixed;
+            top: 0;
+            z-index: 10;
+            text-align: right;
+        }
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            font-size: 18px; /* Decreased font size for smaller header */
+            color: white
+        }
+         /* Adjust .message-thread to extend to the bottom of the viewport */
+        .message-thread {
+    position: fixed;
+    left: 0;
+    top: 1px; /* Adjust based on header height */
+    width: 18%; /* Adjust width as needed */
+    background: #16222A;
+    box-shadow: 2px 0.5px 0.5px #3bb2a0;
+    overflow-y: scroll; /* Enables vertical scrolling */
+    padding: 30px;
+    box-sizing: border-box;
+    bottom: 0; /* Extend to the bottom */
+    z-index: 5; /* Ensure it's below the footer in the visual stack */
+}
+
+/* Hides scrollbar for Chrome, Safari, Opera */
+.message-thread::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hides scrollbar for IE, Edge, and Firefox */
+.message-thread {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+     
+        .chat-input-area {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    padding: 1px;
+    background:  /* Dark background for the input area */
+    z-index: 10;
+}
+
+.chat-input-container {
+    width: 33.33%; /* Adjusted for the layout */
+    display: flex;
+    gap: 10px;
+    align-items: center; /* Center items vertically */
+}
+
+.chat-input {
+    width: 39%;
+    padding: 9px 5px; /* Adjust padding as needed */
+    border-radius: .5px #3bb2a0;;
+    border:0 5px 20px rgba(0,0,0,0.5); /* Light gray, close to white for contrast */
+    background: transparent;
+    color: #ffffff; /* White text color */
+    font-size: 12px; /* Adjust font size as needed */
+}
+
+.chat-upload-btn {
+    margin-left: 100px; /* Adjust as needed to move the button to the right */
+}
+
+.chat-send-btn {
+    padding: 15px 15px; /* Adjust padding to fit the button nicely */
+    border-radius: 2px;
+    background: white; /* Smooth white background */
+    border: none;
+    color: white /* Black text for contrast */
+    cursor: pointer;
+}
+
+ /* Adjust .chat-input-area to accommodate footer */
+        .chat-input-area {
+            bottom: 25px; /* Height of the footer + some padding */ border-color: #3bb2a0;
+            /* Other styles remain unchanged */
+        }
+
+.selection-area {
+    position: absolute; /* Or relative, depending on the rest of your layout */
+    left: 55%;
+    transform: translateX(-50%); /* Adjust if needed to center the selects based on their container's width */
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.model-select, .bot-select {
+    margin: 0 10px;
+    background:  /* Consistent background */
+    color: white;
+    padding: 0px;
+    border-radius: 1px; /* Smooth edges */
+}
+
+.model-select label, .bot-select label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff; /* White text for labels */
+}
+
+.model-select select, .bot-select select {
+    width: 100%;
+    padding: 5px;
+    background: rgba(31, 30, 30, 0.8); /* Slightly transparent background */
+    border: 1px solid #3bb2a0; /* Border color */
+    color: white; /* White text for select options */
+    border-radius: 1px; /* Smooth edges */
+}
+        .hamburger-menu {
+            position: fixed;
+            left: 267px;
+            top: 10px;
+            cursor: pointer;
+            z-index: 1;
+        }
+
+        .hamburger-menu div {
+            width: 18px;
+            height: 1px;
+            background-color: #ffffff;
+            margin: 5px 0;
+            transition: 0.4s;
+        }
+
+        /* Style for the vertical menu */
+        .vertical-menu {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 60px; /* Adjust based on header height */
+            left: 0;
+            width: 200px; /* Adjust as needed */
+            background: #16222A;
+            padding: 10px 0;
+            box-shadow: 2px 0px 5px rgba(0,0,0,0.5);
+            z-index: 14;
+        }
+
+        .vertical-menu a {
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            color: white;
+            transition: background 0.3s;
+        }
+
+        .vertical-menu a:hover {
+            background-color: #302b63;
+        }
+      /* Add footer styles */
+        footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #302b63;
+            color: white;
+            text-align: center;
+            padding: 5px 0;
+            z-index: 10; /* Higher than message thread to overlap */
+        }
+       
