@@ -28,6 +28,9 @@ class User(db.Model):
 def index():
     return render_template('index.html')
 
+llm = ChatOpenAI()
+llm.invoke("Hello, world!")
+
 # Initialize Hugging Face pipeline (e.g., using GPT-2)
 hf_pipeline = pipeline('text-generation', model='gpt2')
 
