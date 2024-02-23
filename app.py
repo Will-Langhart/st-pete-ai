@@ -1,6 +1,18 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
+from flask_sqlalchemy import SQLAlchemy
 import openai
 from transformers import pipeline
+import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
+openai.api_key = os.getenv('OPENAI_API_KEY')
+
+app = Flask(__name__)
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:
+
 
 # Load environment variables
 load_dotenv()
