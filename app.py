@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 import openai
 import os
 from langchain.chat_models import ChatOpenAI
+from transformers import pipeline
 from dotenv import load_dotenv
 
 # Load environment variables
