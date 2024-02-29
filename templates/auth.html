@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile - Pulse-AI</title>
+    <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+    <!-- CSRF Token for form security -->
+    <!-- Ensure Flask-WTF is installed and configured in your Flask app for CSRF protection -->
+</head>
+<body>
+    <header>
+        <h1>Create Account</h1>
+        <div class="profile-icons">
+            <img src="{{ url_for('static', filename='profile.png') }}" alt="Profile Icon" style="height: 60px;">
+            <img src="{{ url_for('static', filename='IMG_2551.PNG') }}" alt="FrizAI Logo" style="height: 60px;">
+        </div>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="vertical-menu">
+            <a href="{{ url_for('index') }}">Chat</a>
+            <a href="{{ url_for('auth') }}">Login</a>
+            <!-- Add more links as needed -->
+        </div>
+    </header>
+    
+    <div class="login-container">
+        <h2>Create New Account</h2>
+        <form action="{{ url_for('add_user') }}" method="POST">
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit" class="login-btn">Create Account</button>
+        </form>
+        
+        <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a></p>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Pulse-AI</p>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='js/auth.js') }}"></script>    
+</body>
+</html>
