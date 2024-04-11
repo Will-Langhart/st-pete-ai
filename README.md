@@ -1,6 +1,6 @@
 # st-pete-ai
 ```bash
-https://instagram.com/stpeteai
+<https://instagram.com/stpeteai>
 ```
 ```bash
 https://meetu.ps/c/55Hs2/13v6GT/a
