@@ -1,5 +1,7 @@
 # Wills_AI_App
-contribute and join https://discord.gg/CMm2Hrgw
+ig: https://instagram.com/stpeteai
+meetup: https://meetu.ps/c/55Hs2/13v6GT/a
+contribute: https://discord.gg/CMm2Hrgw
 
 # Installation and Setup
 Embark on your journey with FrizAI by following these setup instructions:
