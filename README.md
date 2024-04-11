@@ -1,4 +1,5 @@
 # Wills_AI_App
+https://discord.gg/CMm2Hrgw
 
 # Installation and Setup
 Embark on your journey with FrizAI by following these setup instructions:
