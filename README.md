@@ -1,5 +1,5 @@
 # st-pete-ai
-👤https://instagram.com/stpeteai
+https://instagram.com/stpeteai
 🤝https://meetu.ps/c/55Hs2/13v6GT/a
 🚀https://discord.gg/CMm2Hrgw
 
