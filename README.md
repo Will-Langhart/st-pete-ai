@@ -6,8 +6,8 @@ Embark on your journey with FrizAI by following these setup instructions:
 
 1. **Clone the Repository**
     ```bash
-    git clone https://github.com/Will-Langhart/Wills-AI-App.git
-    cd Wills-AI-App
+    git clone https://github.com/Will-Langhart/st-pete-ai.git
+    cd st-pete-ai
     ```
 
 2. **Initialize the Virtual Environment**
@@ -105,4 +105,4 @@ Pulse-AI is under the MIT License. For detailed information, refer to the `LICEN
 
 ---
 
-PulseAI is a testament to FrizAI's commitment to advancing AI technology, making it accessible and transformative for various industries and creative endeavors.
+St Pete AI is committed to advancing AI technology, making it accessible and transformative for various industries and creative endeavors.
