@@ -1,8 +1,14 @@
 # st-pete-ai
+```bash
 https://instagram.com/stpeteai
+```
+```bash
 https://meetu.ps/c/55Hs2/13v6GT/a
+```
+```bash
 https://discord.gg/CMm2Hrgw
-----------------------------
+```
+
 # Installation and Setup
 Embark on your journey with FrizAI by following these setup instructions:
 
