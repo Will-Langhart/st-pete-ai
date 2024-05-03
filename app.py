@@ -4,7 +4,6 @@ from flask_login import LoginManager, login_user, logout_user, login_required, c
 from flask_login import UserMixin
 from flask import flash, redirect, url_for
 from werkzeug.security import generate_password_hash, check_password_hash  # Utilities for hashing and verifying passwords
-from models import Interaction  # Adjust the import path based on your project structure
 import openai # OpenAI API for GPT models
 import asyncio
 import aiohttp
