@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>St Pete AI - Home</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -73,7 +73,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{{ url_for('static', filename='js/preindex.js') }}"></script>
 </body>
 </html>
 
