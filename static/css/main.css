@@ -1,1 +1,109 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    height: 100vh;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: #000; /* Black background */
+    color: #fff; /* White text color */
+    overflow-x: hidden;
+}
+
+a {
+    color: #4ECCA3; /* Cool green accent color for links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #3bb2a0; /* Darker shade of green for hover state */
+}
+
+ul {
+    list-style: none;
+}
+
+/* Header Styles */
+header {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+}
+
+/* Main Section Styles */
+main {
+    padding-top: 60px; /* Offset for fixed header */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.6); /* Translucent black for sections */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Soft black glow */
+    width: 80%;
+    max-width: 960px;
+}
+
+/* Text Styles */
+h1, h2, h3, p {
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+/* Footer Styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    header img {
+        height: 50px;
+    }
+
+    main {
+        padding-top: 100px;
+    }
+}
 
