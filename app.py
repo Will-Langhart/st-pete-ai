@@ -4,7 +4,6 @@ from flask_login import LoginManager, login_user, logout_user, login_required, c
 from flask_login import UserMixin
 from flask import flash, redirect, url_for
 from werkzeug.security import generate_password_hash, check_password_hash  # Utilities for hashing and verifying passwords
-from models import Interaction  # Adjust the import path based on your project structure
 import openai # OpenAI API for GPT models
 import asyncio
 import aiohttp
@@ -112,17 +111,10 @@ def index():
     return render_template('index.html')
 
 if __name__ == '__main__':
-    app.run(
+     app.run(
         host='0.0.0.0',
         port=5000,
-        debug=True,
-    }
-
-llm = ChatOpenAI()
-llm.invoke("Hello, world!")
-
-# Initialize Hugging Face pipeline (e.g., using GPT-2)
-hf_pipeline = pipeline('text-generation', model='gpt2')
+        debug=True)
 
 @app.route('/respond_with_langchain', methods=['POST'])
 def respond_with_langchain():
@@ -139,6 +131,10 @@ def respond_with_huggingface():
 def process_input_with_langchain(input_text):
     # Placeholder for LangChain integration
     return "Response from LangChain for: " + input_text
+
+@app.route('/auth')  # Define route for homepage
+def auth():
+    return render_template('auth.html')
 
 
 

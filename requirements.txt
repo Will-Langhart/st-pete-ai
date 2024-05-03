@@ -2,4 +2,5 @@ Flask==2.2.5
 Flask-SQLAlchemy==2.5.1
 transformers
 openai
-
+asyncio
+aiohttp

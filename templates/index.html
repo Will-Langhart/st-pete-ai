@@ -3,45 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-    <title>index2.html</title>
+    <title>St Pete AI - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header><h1></h1></header>
-    <div class="content">
-        <!-- The content will be dynamically inserted here by JavaScript -->
-    </div>
-   <div class="hamburger-menu" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div class="vertical-menu">
-    <a href="{{ url_for('index') }}">Chat</a>
-        <a href="{{ url_for('auth') }}">Login</a>
-</div>
+    <header>
+        <div style="position: fixed; top: 0; left: 0; display: flex; align-items: center; color: white;">
+    <img src="{{ url_for('static', filename='stpeteai_logo.png') }}" alt="stpeteai" style="height: 60px;">
+    <span style="margin-left: 0px; font-size: 12px;"></span>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#community">Community</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
- <div class="content">
-        <div class="message-thread"></div> <!-- Placeholder for messages -->
-        <div class="chat-input-area">
-          <input type="file" class="chat-upload-btn">
-            <input type="text" class="chat-input" placeholder="Type a message...">
-            <button class="chat-send-btn">Send</button>
+    <main>
+        <section id="welcome">
+            <div class="container">
+                <h1>Welcome to St Pete AI</h1>
+                <p>Your hub for collaborative AI development in St. Petersburg.</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>St Pete AI is dedicated to fostering a vibrant community of AI enthusiasts and developers in St. Petersburg. We focus on collaborative projects that advance AI technology and its applications.</p>
+            </div>
+        </section>
+
+        <section id="developers">
+            <div class="container">
+                <h2>List of Developers</h2>
+                <p>Meet the innovative minds behind our projects.</p>
+                <ul>
+                    <li>Will Langhart - Lead Developer</li>
+                    <!-- Additional developers can be added here -->
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="container">
+                <h2>Our Projects</h2>
+                <p>Explore the projects developed by our community. These projects range from beginner-friendly tutorials to advanced AI systems.</p>
+                <ul>
+                    <li><a href="#">AI Chatbot</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="community">
+            <div class="container">
+                <h2>Join Our Community</h2>
+                <p>Become a part of our thriving community. Connect, learn, and grow with other AI developers in St. Petersburg.</p>
+                <a href="signup.html">Sign Up</a>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>If you have any questions, please feel free to reach out to us.</p>
+                <p>Email: <a href="mailto:web.frizai@gmail.com">web.frizai@gmail.com</a></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 St Pete AI. All rights reserved.</p>
         </div>
-    </div>
-  
-  <!-- AI Model Selection Button -->     
-    <title></title>
-         <div class="selection-area">
-         <div class="model-select">
-            <label for="modelSelect">Choose a model:</label>
-            <select id="modelSelect">
-                <option value="gpt-neo-2.7b">GPT-Neo 2.7B (Hugging Face)</option>
-                <option value="distilgpt2">DistilGPT2 (Hugging Face)</option>
-                <option value="lc-gpt-j-6B">GPT-J-6B (LangChain)</option>
-                <option value="lc-blenderbot-3B">BlenderBot 3B (LangChain)</option>
-            </select>
-        </div>
-    </div>  
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>    
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/preindex.js') }}"></script>
+</body>
 </html>
+
+
