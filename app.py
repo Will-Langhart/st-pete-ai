@@ -116,9 +116,6 @@ if __name__ == '__main__':
         port=5000,
         debug=True)
 
-# Initialize Hugging Face pipeline (e.g., using GPT-2)
-hf_pipeline = pipeline('text-generation', model='gpt2')
-
 @app.route('/respond_with_langchain', methods=['POST'])
 def respond_with_langchain():
     user_input = request.json.get('input')
