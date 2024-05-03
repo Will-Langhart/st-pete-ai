@@ -33,7 +33,7 @@ header {
     position: fixed;
     top: 0;
     display: flex;
-    justify-content: center;
+    justify-content: space-between; /* Aligns items to space between */
     align-items: center;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -96,14 +96,21 @@ footer p {
     nav ul {
         flex-direction: column;
         padding: 10px;
+        text-align: right; /* Aligns navigation text to the right on small screens */
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start; /* Aligns items to the start on small screens */
     }
 
     header img {
-        height: 50px;
+        align-self: center; /* Centers the logo on small screens */
     }
 
     main {
         padding-top: 100px;
     }
 }
+
 
