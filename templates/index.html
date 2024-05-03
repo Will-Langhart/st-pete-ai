@@ -10,8 +10,9 @@
 </head>
 <body>
     <header>
-        <div class="container" style="text-align: center;">
-            <img src="stpeteai_logo.png" alt="St Pete AI Logo" style="height: 120px; display: block; margin: 0 auto; padding-top: 10px;">
+        <div style="position: fixed; top: 0; left: 0; display: flex; align-items: center; color: white;">
+    <img src="{{ url_for('static', filename='stpeteai_logo.png') }}" alt="stpeteai" style="height: 60px;">
+    <span style="margin-left: 0px; font-size: 12px;">St Pete AI</span>
             <nav>
                 <ul>
                     <li><a href="#about">About</a></li>
