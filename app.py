@@ -116,9 +116,6 @@ if __name__ == '__main__':
         port=5000,
         debug=True)
 
-llm = ChatOpenAI()
-llm.invoke("Hello, world!")
-
 # Initialize Hugging Face pipeline (e.g., using GPT-2)
 hf_pipeline = pipeline('text-generation', model='gpt2')
 
