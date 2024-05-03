@@ -3,57 +3,39 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        font-family: 'Roboto', Arial, sans-serif;
+        transition: all 0.3s ease; /* Smooth transitions for all properties */
     }
     body, html {
         height: 100vh;
         font-family: 'Roboto', Arial, sans-serif;
         background: linear-gradient(to right bottom, #121212, #0d0d0d); /* Subtle gradient for depth */
-        color: #fff;
+        color: #fff; /* White text for contrast */
         overflow-x: hidden;
-        overflow-y: auto; /* Ensure scrollbar is visible when needed */
     }
 
-    /* Scrollbar Styles */
-    ::-webkit-scrollbar {
-        width: 4px; /* Reduced width of the scrollbar */
-    }
-
-    ::-webkit-scrollbar-track {
-        background: #000; /* Background of the track, can be transparent or any color */
-    }
-
-    ::-webkit-scrollbar-thumb {
-        background-color: #555; /* Color of the scrollbar itself */
-        border-radius: 2px; /* Optional: adds rounded corners to the scrollbar */
-        border: 1px solid #000; /* Optional: adds border around the scrollbar */
-    }
-
+    /* Enhanced Link Styles */
     a {
         color: #4ECCA3; /* Cool green accent color for links */
-        text-decoration: none;
-        transition: color 0.2s;
+        text-decoration: none; /* No underline */
+        transition: color 0.3s; /* Smooth color transition */
     }
-
     a:hover {
-        color: #3bb2a0;
-    }
-
-    ul {
-        list-style: none;
+        color: #3bb2a0; /* Darker shade on hover */
+        text-decoration: underline; /* Underline on hover */
     }
 
     /* Header Styles */
     header {
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        padding: 10px 20px;
+        background-color: rgba(0, 0, 0, 0.85); /* Semi-transparent black for header */
+        padding: 15px 20px;
         position: fixed;
         top: 0;
         display: flex;
-        justify-content: space-between; /* Aligns items to space between */
+        justify-content: space-between;
         align-items: center;
         z-index: 1000;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
     }
 
     nav ul {
@@ -61,27 +43,36 @@
         gap: 20px;
     }
 
-    /* Main Section Styles */
+    /* Main Content Styles */
     main {
-        padding-top: 60px; /* Offset for fixed header */
+        padding-top: 80px; /* Offset for the fixed header */
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
+    /* Section Styles with Glassmorphism */
     section {
         margin: 20px;
-        padding: 20px;
-        border-radius: 8px;
-        background: rgba(0, 0, 0, 0.6); /* Translucent black for sections */
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Soft black glow */
-        width: 80%;
+        padding: 25px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.1); /* Transparent white background */
+        backdrop-filter: blur(10px); /* Blur effect for glassmorphism */
+        border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+        width: 90%;
         max-width: 960px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+    }
+
+    section:hover {
+        transform: translateY(-5px); /* Slight lift effect on hover */
+        box-shadow: 0 12px 20px rgba(0, 255, 255, 0.2); /* Brighter and larger shadow on hover */
     }
 
     /* Text Styles */
     h1, h2, h3, p {
-        margin-bottom: 10px;
+        margin-bottom: 15px;
     }
 
     h1 {
@@ -92,41 +83,49 @@
         font-size: 2rem;
     }
 
+    p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
     /* Footer Styles */
     footer {
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
+        background-color: #222;
         text-align: center;
         padding: 10px 0;
-        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
     }
 
     footer p {
-        font-size: 1rem;
+        font-size: 0.9rem;
+        color: #ccc;
     }
 
     /* Responsive Design Adjustments */
     @media (max-width: 768px) {
+        header {
+            flex-direction: column;
+            align-items: center;
+        }
+
         nav ul {
             flex-direction: column;
             padding: 10px;
-            text-align: right; /* Aligns navigation text to the right on small screens */
-        }
-
-        header {
-            flex-direction: column;
-            align-items: flex-start; /* Aligns items to the start on small screens */
         }
 
         header img {
-            align-self: center; /* Centers the logo on small screens */
+            margin-bottom: 10px; /* Extra spacing in mobile view */
         }
 
-        main {
-            padding-top: 100px;
+        h1 {
+            font-size: 2rem; /* Smaller font size for mobile */
+        }
+
+        h2 {
+            font-size: 1.75rem; /* Smaller font size for mobile */
         }
     }
 
